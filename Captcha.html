@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="touch-up.css">
+</head>
+<div class="okati">
+<body style="background-image: url('maxresdefault.jpg'); background-repeat: no-repeat; background-size: cover;">
+  <p>
+    <div class="container">
+        <div class="row">
+            <div style="width: 40%; margin: 25px auto;">
+            <h3  style="color:bisque ;text-align:center";>Login Page</h3>
+            <form method="dialog" action="">
+                <div class="form-group">
+                    <label style="color:bisque ;">UserName:</label><input type="text" name="UserName" class="form-control" autofocus placeholder="username">
+                </div>
+                <div class="form-group">
+                    <label style="color:bisque ;">Password:</label><input type="Password" name="Password" class="form-control" autofocus placeholder="Password">
+                </div>
+    
+          <label  style="color:bisque ;">Enter Captcha:</label>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" readonly id="capt">
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="textinput">
+            </div>
+          </div>
+    
+        <div class="form-group">
+                    <button onclick="validcap()" class="btn btn-lg btn-success btn-block">Submit</button>
+                </div>
+            </form>
+        <h6 style="color:bisque ;">Captcha not visible <img src="maxresdefault.jpg" width="40px" onclick="cap()"></h6>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+      function cap(){
+        var alpha = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V'
+                     ,'W','X','Y','Z','1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f','g','h','i',
+                     'j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z', '!','@','#','$','%','^','&','*','+','-','+','_','+','{','}','[',']',';',':'];
+                     var a = alpha[Math.floor(Math.random()*81)];
+                     var b = alpha[Math.floor(Math.random()*81)];
+                     var c = alpha[Math.floor(Math.random()*81)];
+                     var d = alpha[Math.floor(Math.random()*81)];
+                     var e = alpha[Math.floor(Math.random()*81)];
+                     var f = alpha[Math.floor(Math.random()*81)];
+                     var g = alpha[Math.floor(Math.random()*81)];
+    
+                     var final = a+b+c+d+e+f+g;
+                     document.getElementById("capt").value=final;
+                   }
+                   function validcap(){
+                    var stg1 = document.getElementById('capt').value;
+                    var stg2 = document.getElementById('textinput').value;
+                    if(stg1==stg2){
+                      alert("Form is validated Succesfully");
+                      return true;
+                    }else{
+                      alert("Please enter a valid captcha");
+                      return false;
+                    }
+                   }
+    </script>
+    </p>
+</body>
+</div>
+</html>
